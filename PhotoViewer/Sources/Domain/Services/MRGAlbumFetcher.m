@@ -54,7 +54,8 @@
 - (MRGAlbum *)p_fetchAlbumFromCollection:(PHAssetCollection *)collection {
     PHFetchOptions *fetchOptions = [PHFetchOptions new];
     fetchOptions.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
-    PHFetchResult<PHAsset *> *assets = [PHAsset fetchAssetsWithMediaType:PHAssetMediaTypeImage options:fetchOptions];
+    fetchOptions.predicate = [NSPredicate predicateWithFormat:@"mediaType == %ld", PHAssetMediaTypeImage];
+    PHFetchResult<PHAsset *> *assets = [PHAsset fetchAssetsInAssetCollection:collection options:fetchOptions];
     MRGAlbum *album = [[MRGAlbum alloc] initWithAssets:assets title:collection.localizedTitle];
     return album;
 }

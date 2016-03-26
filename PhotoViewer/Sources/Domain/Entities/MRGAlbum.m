@@ -33,4 +33,8 @@
     return self.photoAssets.count;
 }
 
+- (PHAsset *)lastPhotoAsset {
+    return self.photoAssets.lastObject;
+}
+
 @end

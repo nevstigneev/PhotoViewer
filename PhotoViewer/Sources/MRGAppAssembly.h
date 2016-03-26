@@ -10,8 +10,11 @@
 
 @protocol MRGAlbumFetcher;
 
+@class PHImageManager;
+
 @interface MRGAppAssembly : NSObject
 
 @property (strong, nonatomic, readonly) id<MRGAlbumFetcher> albumFetcher;
+@property (strong, nonatomic, readonly) PHImageManager *imageManager;
 
 @end

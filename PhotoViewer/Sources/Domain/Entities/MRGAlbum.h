@@ -15,6 +15,7 @@
 @property (copy, nonatomic, readonly) NSString *title;
 @property (assign, nonatomic, readonly) NSUInteger photoCount;
 @property (strong, nonatomic, readonly) PHFetchResult<PHAsset *> *photoAssets;
+@property (strong, nonatomic, readonly) PHAsset *lastPhotoAsset;
 
 - (instancetype)initWithAssets:(PHFetchResult<PHAsset *> *)assets title:(NSString *)title;
 

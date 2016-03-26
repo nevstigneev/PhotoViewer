@@ -8,6 +8,7 @@
 
 #import "MRGAppAssembly.h"
 #import "MRGAlbumFetcher.h"
+#import <Photos/Photos.h>
 
 @implementation MRGAppAssembly
 
@@ -15,6 +16,7 @@
     self = [super init];
     if (self) {
         _albumFetcher = [MRGAlbumFetcher new];
+        _imageManager = [PHImageManager defaultManager];
     }
     return self;
 }
