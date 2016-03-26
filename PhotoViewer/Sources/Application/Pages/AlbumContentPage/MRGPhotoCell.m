@@ -1,14 +1,14 @@
 //
-//  MRGAlbumCell.m
+//  MRGPhotoCell.m
 //  PhotoViewer
 //
 //  Created by Nikolay Evstigneev on 26.03.16.
 //  Copyright © 2016 Nikolay Evstigneev. All rights reserved.
 //
 
-#import "MRGAlbumCell.h"
+#import "MRGPhotoCell.h"
 
-@implementation MRGAlbumCell
+@implementation MRGPhotoCell
 
 + (UINib *)nib {
     return [UINib nibWithNibName:[self reuseIdentifier] bundle:nil];

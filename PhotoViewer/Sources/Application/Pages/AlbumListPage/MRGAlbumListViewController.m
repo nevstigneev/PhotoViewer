@@ -11,6 +11,8 @@
 #import "MRGAlbumFetcher.h"
 #import "MRGAlbum.h"
 #import "MRGAlbumCell.h"
+#import "MRGAlbumContentViewController.h"
+#import "MRGPresentationHelper.h"
 #import <Photos/Photos.h>
 
 @interface MRGAlbumListViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -24,6 +26,7 @@
 
 static const CGFloat kRowHeight = 76.0;
 static const CGFloat kImageSize = 60.0;
+static NSString *const kAlbumContentSegue = @"MRGAlbumContentSegue";
 
 @implementation MRGAlbumListViewController
 
@@ -45,15 +48,40 @@ static const CGFloat kImageSize = 60.0;
     cell.titleLabel.text = album.title;
     cell.photoCountLabel.text = [NSString stringWithFormat:@"%ld", album.photoCount];
     PHImageManager *imageManager = self.assembly.imageManager;
-    [imageManager cancelImageRequest:self.requestID];
-    cell.thumbnailView.image = nil;
-    self.requestID = [imageManager requestImageForAsset:album.lastPhotoAsset targetSize:CGSizeMake(kImageSize, kImageSize) contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+//    [imageManager cancelImageRequest:self.requestID];
+//    cell.thumbnailView.image = nil;
+    self.requestID = [imageManager requestImageForAsset:album.lastPhotoAsset targetSize:sizeInPixels(kImageSize) contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         cell.thumbnailView.image = result;
+        NSLog(@"%@", NSStringFromCGSize(result.size));
+        if ([[info valueForKey:@"PHImageResultIsDegradedKey"]integerValue]==0){
+            // Do something with the FULL SIZED image
+            NSLog(@"full");
+        } else {
+            NSLog(@"degraded");
+            // Do something with the regraded image
+        }
     }];
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:kAlbumContentSegue sender:self];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:kAlbumContentSegue]) {
+        MRGAlbumContentViewController *vc = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        MRGAlbum *album = self.albums[indexPath.row];
+        vc.album = album;
+        vc.assembly = self.assembly;
+    }
+}
 
 #pragma mark - Private 
 

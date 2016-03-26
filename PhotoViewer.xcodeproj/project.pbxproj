@@ -21,6 +21,10 @@
 		6001F2F31CA6189E0087F27C /* MRGAppAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001F2F21CA6189E0087F27C /* MRGAppAssembly.m */; };
 		60B81DA11CA6BEDD00682940 /* MRGAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B81DA01CA6BEDD00682940 /* MRGAlbumCell.m */; };
 		60B81DA31CA6BFA100682940 /* MRGAlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B81DA21CA6BFA100682940 /* MRGAlbumCell.xib */; };
+		60B81DA71CA6DBF700682940 /* MRGAlbumContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B81DA61CA6DBF700682940 /* MRGAlbumContentViewController.m */; };
+		60B81DA91CA6E8C700682940 /* MRGPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B81DA81CA6E8C700682940 /* MRGPhotoCell.xib */; };
+		60B81DAC1CA6E8FC00682940 /* MRGPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B81DAB1CA6E8FC00682940 /* MRGPhotoCell.m */; };
+		60B81DB11CA7268700682940 /* MRGPresentationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B81DB01CA7268700682940 /* MRGPresentationHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,13 @@
 		60B81D9F1CA6BEDD00682940 /* MRGAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRGAlbumCell.h; path = Sources/Application/Pages/AlbumListPage/MRGAlbumCell.h; sourceTree = "<group>"; };
 		60B81DA01CA6BEDD00682940 /* MRGAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRGAlbumCell.m; path = Sources/Application/Pages/AlbumListPage/MRGAlbumCell.m; sourceTree = "<group>"; };
 		60B81DA21CA6BFA100682940 /* MRGAlbumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MRGAlbumCell.xib; path = Resources/MRGAlbumCell.xib; sourceTree = "<group>"; };
+		60B81DA51CA6DBF700682940 /* MRGAlbumContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRGAlbumContentViewController.h; path = Sources/Application/Pages/AlbumContentPage/MRGAlbumContentViewController.h; sourceTree = "<group>"; };
+		60B81DA61CA6DBF700682940 /* MRGAlbumContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRGAlbumContentViewController.m; path = Sources/Application/Pages/AlbumContentPage/MRGAlbumContentViewController.m; sourceTree = "<group>"; };
+		60B81DA81CA6E8C700682940 /* MRGPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MRGPhotoCell.xib; path = Resources/MRGPhotoCell.xib; sourceTree = "<group>"; };
+		60B81DAA1CA6E8FC00682940 /* MRGPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRGPhotoCell.h; path = Sources/Application/Pages/AlbumContentPage/MRGPhotoCell.h; sourceTree = "<group>"; };
+		60B81DAB1CA6E8FC00682940 /* MRGPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRGPhotoCell.m; path = Sources/Application/Pages/AlbumContentPage/MRGPhotoCell.m; sourceTree = "<group>"; };
+		60B81DAF1CA7268700682940 /* MRGPresentationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRGPresentationHelper.h; path = Sources/Application/Utilities/MRGPresentationHelper.h; sourceTree = "<group>"; };
+		60B81DB01CA7268700682940 /* MRGPresentationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRGPresentationHelper.m; path = Sources/Application/Utilities/MRGPresentationHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +145,7 @@
 			children = (
 				6001F2C81CA5E64F0087F27C /* Assets.xcassets */,
 				60B81DA21CA6BFA100682940 /* MRGAlbumCell.xib */,
+				60B81DA81CA6E8C700682940 /* MRGPhotoCell.xib */,
 				6001F2CA1CA5E6650087F27C /* LaunchScreen.storyboard */,
 				6001F2CC1CA5E6650087F27C /* Main.storyboard */,
 			);
@@ -161,7 +173,9 @@
 			isa = PBXGroup;
 			children = (
 				6001F2E31CA5E9B60087F27C /* AlbumListPage */,
+				60B81DA41CA6DBB800682940 /* AlbumContentPage */,
 				6001F2ED1CA618280087F27C /* ViewControllers */,
+				60B81DAD1CA7264200682940 /* Utilities */,
 			);
 			name = Pages;
 			sourceTree = "<group>";
@@ -218,6 +232,26 @@
 				6001F2EF1CA618510087F27C /* MRGBaseViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		60B81DA41CA6DBB800682940 /* AlbumContentPage */ = {
+			isa = PBXGroup;
+			children = (
+				60B81DAA1CA6E8FC00682940 /* MRGPhotoCell.h */,
+				60B81DAB1CA6E8FC00682940 /* MRGPhotoCell.m */,
+				60B81DA51CA6DBF700682940 /* MRGAlbumContentViewController.h */,
+				60B81DA61CA6DBF700682940 /* MRGAlbumContentViewController.m */,
+			);
+			name = AlbumContentPage;
+			sourceTree = "<group>";
+		};
+		60B81DAD1CA7264200682940 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				60B81DAF1CA7268700682940 /* MRGPresentationHelper.h */,
+				60B81DB01CA7268700682940 /* MRGPresentationHelper.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6001F2E01CA5E7140087F27C /* Info.plist in Resources */,
+				60B81DA91CA6E8C700682940 /* MRGPhotoCell.xib in Resources */,
 				6001F2CF1CA5E6650087F27C /* Main.storyboard in Resources */,
 				60B81DA31CA6BFA100682940 /* MRGAlbumCell.xib in Resources */,
 				6001F2C91CA5E64F0087F27C /* Assets.xcassets in Resources */,
@@ -326,9 +361,12 @@
 				60B81DA11CA6BEDD00682940 /* MRGAlbumCell.m in Sources */,
 				6001F2F01CA618510087F27C /* MRGBaseViewController.m in Sources */,
 				6001F2E91CA5FBFE0087F27C /* MRGAlbum.m in Sources */,
+				60B81DA71CA6DBF700682940 /* MRGAlbumContentViewController.m in Sources */,
 				6001F2EC1CA5FEBD0087F27C /* MRGAlbumFetcher.m in Sources */,
 				6001F2F31CA6189E0087F27C /* MRGAppAssembly.m in Sources */,
 				6001F2E61CA5E9E50087F27C /* MRGAlbumListViewController.m in Sources */,
+				60B81DAC1CA6E8FC00682940 /* MRGPhotoCell.m in Sources */,
+				60B81DB11CA7268700682940 /* MRGPresentationHelper.m in Sources */,
 				6001F2DB1CA5E6DE0087F27C /* main.m in Sources */,
 				6001F2DC1CA5E6DE0087F27C /* MRGAppDelegate.m in Sources */,
 			);

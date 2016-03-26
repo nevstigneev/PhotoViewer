@@ -12,6 +12,6 @@
 
 @interface MRGBaseViewController : UIViewController
 
-@property (strong, nonatomic) MRGAppAssembly *assembly;
+@property (weak, nonatomic) MRGAppAssembly *assembly;
 
 @end
