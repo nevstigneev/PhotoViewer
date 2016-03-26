@@ -15,6 +15,10 @@
 		6001F2E01CA5E7140087F27C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6001F2DE1CA5E7140087F27C /* Info.plist */; };
 		6001F2E21CA5E8F10087F27C /* PhotoViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001F2DF1CA5E7140087F27C /* PhotoViewerTests.m */; };
 		6001F2E61CA5E9E50087F27C /* MRGAlbumListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001F2E51CA5E9E50087F27C /* MRGAlbumListViewController.m */; };
+		6001F2E91CA5FBFE0087F27C /* MRGAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001F2E81CA5FBFE0087F27C /* MRGAlbum.m */; };
+		6001F2EC1CA5FEBD0087F27C /* MRGAlbumFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001F2EB1CA5FEBD0087F27C /* MRGAlbumFetcher.m */; };
+		6001F2F01CA618510087F27C /* MRGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001F2EF1CA618510087F27C /* MRGBaseViewController.m */; };
+		6001F2F31CA6189E0087F27C /* MRGAppAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001F2F21CA6189E0087F27C /* MRGAppAssembly.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,14 @@
 		6001F2DF1CA5E7140087F27C /* PhotoViewerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoViewerTests.m; path = Tests/PhotoViewerTests.m; sourceTree = "<group>"; };
 		6001F2E41CA5E9E50087F27C /* MRGAlbumListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRGAlbumListViewController.h; path = Sources/Application/Pages/AlbumListPage/MRGAlbumListViewController.h; sourceTree = "<group>"; };
 		6001F2E51CA5E9E50087F27C /* MRGAlbumListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRGAlbumListViewController.m; path = Sources/Application/Pages/AlbumListPage/MRGAlbumListViewController.m; sourceTree = "<group>"; };
+		6001F2E71CA5FBFE0087F27C /* MRGAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRGAlbum.h; path = Sources/Domain/Entities/MRGAlbum.h; sourceTree = "<group>"; };
+		6001F2E81CA5FBFE0087F27C /* MRGAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRGAlbum.m; path = Sources/Domain/Entities/MRGAlbum.m; sourceTree = "<group>"; };
+		6001F2EA1CA5FEBD0087F27C /* MRGAlbumFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRGAlbumFetcher.h; path = Sources/Domain/Services/MRGAlbumFetcher.h; sourceTree = "<group>"; };
+		6001F2EB1CA5FEBD0087F27C /* MRGAlbumFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRGAlbumFetcher.m; path = Sources/Domain/Services/MRGAlbumFetcher.m; sourceTree = "<group>"; };
+		6001F2EE1CA618510087F27C /* MRGBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRGBaseViewController.h; path = Sources/Application/ViewControllers/MRGBaseViewController.h; sourceTree = "<group>"; };
+		6001F2EF1CA618510087F27C /* MRGBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRGBaseViewController.m; path = Sources/Application/ViewControllers/MRGBaseViewController.m; sourceTree = "<group>"; };
+		6001F2F11CA6189E0087F27C /* MRGAppAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRGAppAssembly.h; path = Sources/MRGAppAssembly.h; sourceTree = "<group>"; };
+		6001F2F21CA6189E0087F27C /* MRGAppAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRGAppAssembly.m; path = Sources/MRGAppAssembly.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +115,8 @@
 				6001F2D01CA5E68D0087F27C /* Application */,
 				6001F2D21CA5E6980087F27C /* Domain */,
 				6001F2D31CA5E69D0087F27C /* Utilities */,
+				6001F2F11CA6189E0087F27C /* MRGAppAssembly.h */,
+				6001F2F21CA6189E0087F27C /* MRGAppAssembly.m */,
 				6001F2D71CA5E6DE0087F27C /* MRGAppDelegate.h */,
 				6001F2D81CA5E6DE0087F27C /* MRGAppDelegate.m */,
 				6001F2D61CA5E6DE0087F27C /* main.m */,
@@ -141,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				6001F2E31CA5E9B60087F27C /* AlbumListPage */,
+				6001F2ED1CA618280087F27C /* ViewControllers */,
 			);
 			name = Pages;
 			sourceTree = "<group>";
@@ -164,6 +179,8 @@
 		6001F2D41CA5E6C50087F27C /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				6001F2E71CA5FBFE0087F27C /* MRGAlbum.h */,
+				6001F2E81CA5FBFE0087F27C /* MRGAlbum.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -171,6 +188,8 @@
 		6001F2D51CA5E6CA0087F27C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6001F2EA1CA5FEBD0087F27C /* MRGAlbumFetcher.h */,
+				6001F2EB1CA5FEBD0087F27C /* MRGAlbumFetcher.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -182,6 +201,15 @@
 				6001F2E51CA5E9E50087F27C /* MRGAlbumListViewController.m */,
 			);
 			name = AlbumListPage;
+			sourceTree = "<group>";
+		};
+		6001F2ED1CA618280087F27C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6001F2EE1CA618510087F27C /* MRGBaseViewController.h */,
+				6001F2EF1CA618510087F27C /* MRGBaseViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +314,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6001F2F01CA618510087F27C /* MRGBaseViewController.m in Sources */,
+				6001F2E91CA5FBFE0087F27C /* MRGAlbum.m in Sources */,
+				6001F2EC1CA5FEBD0087F27C /* MRGAlbumFetcher.m in Sources */,
+				6001F2F31CA6189E0087F27C /* MRGAppAssembly.m in Sources */,
 				6001F2E61CA5E9E50087F27C /* MRGAlbumListViewController.m in Sources */,
 				6001F2DB1CA5E6DE0087F27C /* main.m in Sources */,
 				6001F2DC1CA5E6DE0087F27C /* MRGAppDelegate.m in Sources */,

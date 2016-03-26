@@ -7,16 +7,30 @@
 //
 
 #import "MRGAppDelegate.h"
+#import "MRGAppAssembly.h"
+#import "MRGBaseViewController.h"
 
 @interface MRGAppDelegate ()
+
+@property (strong, nonatomic) MRGAppAssembly *assembly;
 
 @end
 
 @implementation MRGAppDelegate
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.assembly = [MRGAppAssembly new];
+    }
+    return self;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
+    MRGBaseViewController *vc = nav.viewControllers.firstObject;
+    vc.assembly = self.assembly;
     return YES;
 }
 

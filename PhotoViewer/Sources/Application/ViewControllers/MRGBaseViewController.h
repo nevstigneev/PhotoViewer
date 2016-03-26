@@ -1,5 +1,5 @@
 //
-//  MRGAlbumListViewController.h
+//  MRGBaseViewController.h
 //  PhotoViewer
 //
 //  Created by Nikolay Evstigneev on 26.03.16.
@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MRGBaseViewController.h"
 
-@interface MRGAlbumListViewController : MRGBaseViewController
+@class MRGAppAssembly;
+
+@interface MRGBaseViewController : UIViewController
+
+@property (strong, nonatomic) MRGAppAssembly *assembly;
 
 @end
