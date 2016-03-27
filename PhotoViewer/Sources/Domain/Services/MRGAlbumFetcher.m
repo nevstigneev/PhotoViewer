@@ -35,9 +35,14 @@
 - (void)fetchAlbumsWithCompletion:(MRGCompletionHandlerWithAlbums)completionHandler {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSMutableArray<MRGAlbum *> *albums = [NSMutableArray new];
-        PHFetchResult<PHAssetCollection *> *collections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum
-                                                                                                   subtype:PHAssetCollectionSubtypeAny options:nil];
-        [collections enumerateObjectsUsingBlock:^(PHAssetCollection * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        PHFetchResult<PHAssetCollection *> *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum
+                                                                                                   subtype:PHAssetCollectionSubtypeSmartAlbumUserLibrary options:nil];
+        [smartAlbums enumerateObjectsUsingBlock:^(PHAssetCollection * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            MRGAlbum *album = [self p_fetchAlbumFromCollection:obj];
+            [albums addObject:album];
+        }];
+        PHFetchResult<PHAssetCollection *> *userAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+        [userAlbums enumerateObjectsUsingBlock:^(PHAssetCollection * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             MRGAlbum *album = [self p_fetchAlbumFromCollection:obj];
             [albums addObject:album];
         }];

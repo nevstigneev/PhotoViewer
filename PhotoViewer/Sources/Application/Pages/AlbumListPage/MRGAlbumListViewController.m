@@ -13,6 +13,7 @@
 #import "MRGAlbumCell.h"
 #import "MRGAlbumContentViewController.h"
 #import "MRGPresentationHelper.h"
+#import "UIViewController+MRGPresentation.h"
 #import <Photos/Photos.h>
 
 @interface MRGAlbumListViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -31,7 +32,7 @@ static NSString *const kAlbumContentSegue = @"MRGAlbumContentSegue";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self p_setupViews];
-    [self p_updateData];
+    [self p_checkAuthorization];
 }
 
 #pragma mark - UITableViewDataSource
@@ -44,7 +45,7 @@ static NSString *const kAlbumContentSegue = @"MRGAlbumContentSegue";
     MRGAlbumCell *cell = [tableView dequeueReusableCellWithIdentifier:[MRGAlbumCell reuseIdentifier] forIndexPath:indexPath];
     MRGAlbum *album = self.albums[indexPath.row];
     cell.titleLabel.text = album.title;
-    cell.photoCountLabel.text = [NSString stringWithFormat:@"%ld", album.photoCount];
+    cell.photoCountLabel.text = [NSString stringWithFormat:@"%ld", (unsigned long)album.photoCount];
     PHImageManager *imageManager = self.assembly.imageManager;
     if (cell.tag) {
         [imageManager cancelImageRequest:(PHImageRequestID)cell.tag];
@@ -80,6 +81,25 @@ static NSString *const kAlbumContentSegue = @"MRGAlbumContentSegue";
 - (void)setAlbums:(NSArray<MRGAlbum *> *)albums {
     _albums = albums;
     [self.tableView reloadData];
+}
+
+- (void)p_checkAuthorization {
+    PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+    if (status == PHAuthorizationStatusDenied) {
+        [self mrg_showAccessDeniedAlert];
+    } else if (status == PHAuthorizationStatusNotDetermined) {
+        [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (status == PHAuthorizationStatusAuthorized) {
+                    [self p_updateData];
+                } else if (status == PHAuthorizationStatusDenied) {
+                    [self mrg_showAccessDeniedAlert];
+                }
+            });
+        }];
+    } else if (status == PHAuthorizationStatusAuthorized) {
+        [self p_updateData];
+    }
 }
 
 - (void)p_setupViews {

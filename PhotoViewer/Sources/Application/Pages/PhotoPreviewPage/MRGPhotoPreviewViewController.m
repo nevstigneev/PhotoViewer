@@ -36,7 +36,6 @@
 - (void)p_setupViews {
     PHImageManager *imageManager = self.assembly.imageManager;
     CGSize size = self.imageView.bounds.size;
-    NSLog(@"%@", NSStringFromCGSize(size));
     [imageManager requestImageForAsset:self.asset targetSize:mrg_sizeInPixels(size) contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         self.imageView.image = result;
     }];

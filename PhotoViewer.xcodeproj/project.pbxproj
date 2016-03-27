@@ -26,6 +26,7 @@
 		60B81DAC1CA6E8FC00682940 /* MRGPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B81DAB1CA6E8FC00682940 /* MRGPhotoCell.m */; };
 		60B81DB11CA7268700682940 /* MRGPresentationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B81DB01CA7268700682940 /* MRGPresentationHelper.m */; };
 		60B81DB51CA7E0AF00682940 /* MRGPhotoPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B81DB41CA7E0AF00682940 /* MRGPhotoPreviewViewController.m */; };
+		60B81DC01CA8803800682940 /* UIViewController+MRGPresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B81DBF1CA8803800682940 /* UIViewController+MRGPresentation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		60B81DB01CA7268700682940 /* MRGPresentationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRGPresentationHelper.m; path = Sources/Application/Utilities/MRGPresentationHelper.m; sourceTree = "<group>"; };
 		60B81DB31CA7E0AF00682940 /* MRGPhotoPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRGPhotoPreviewViewController.h; path = Sources/Application/Pages/PhotoPreviewPage/MRGPhotoPreviewViewController.h; sourceTree = "<group>"; };
 		60B81DB41CA7E0AF00682940 /* MRGPhotoPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRGPhotoPreviewViewController.m; path = Sources/Application/Pages/PhotoPreviewPage/MRGPhotoPreviewViewController.m; sourceTree = "<group>"; };
+		60B81DBE1CA8803800682940 /* UIViewController+MRGPresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MRGPresentation.h"; path = "Sources/Application/Utilities/UIViewController+MRGPresentation.h"; sourceTree = "<group>"; };
+		60B81DBF1CA8803800682940 /* UIViewController+MRGPresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MRGPresentation.m"; path = "Sources/Application/Utilities/UIViewController+MRGPresentation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +257,8 @@
 			children = (
 				60B81DAF1CA7268700682940 /* MRGPresentationHelper.h */,
 				60B81DB01CA7268700682940 /* MRGPresentationHelper.m */,
+				60B81DBE1CA8803800682940 /* UIViewController+MRGPresentation.h */,
+				60B81DBF1CA8803800682940 /* UIViewController+MRGPresentation.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 				60B81DB11CA7268700682940 /* MRGPresentationHelper.m in Sources */,
 				6001F2DB1CA5E6DE0087F27C /* main.m in Sources */,
 				6001F2DC1CA5E6DE0087F27C /* MRGAppDelegate.m in Sources */,
+				60B81DC01CA8803800682940 /* UIViewController+MRGPresentation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
