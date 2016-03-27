@@ -20,12 +20,11 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) NSArray<MRGAlbum *> *albums;
-@property (assign, nonatomic) PHImageRequestID requestID;
 
 @end
 
 static const CGFloat kRowHeight = 76.0;
-static const CGFloat kImageSize = 60.0;
+static const CGFloat kImageSize = 70.0;
 static NSString *const kAlbumContentSegue = @"MRGAlbumContentSegue";
 
 @implementation MRGAlbumListViewController
@@ -48,18 +47,12 @@ static NSString *const kAlbumContentSegue = @"MRGAlbumContentSegue";
     cell.titleLabel.text = album.title;
     cell.photoCountLabel.text = [NSString stringWithFormat:@"%ld", album.photoCount];
     PHImageManager *imageManager = self.assembly.imageManager;
-//    [imageManager cancelImageRequest:self.requestID];
-//    cell.thumbnailView.image = nil;
-    self.requestID = [imageManager requestImageForAsset:album.lastPhotoAsset targetSize:sizeInPixels(kImageSize) contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+    if (cell.tag) {
+        [imageManager cancelImageRequest:(PHImageRequestID)cell.tag];
+    }
+    cell.tag = [imageManager requestImageForAsset:album.lastPhotoAsset targetSize:sizeInPixels(kImageSize) contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         cell.thumbnailView.image = result;
         NSLog(@"%@", NSStringFromCGSize(result.size));
-        if ([[info valueForKey:@"PHImageResultIsDegradedKey"]integerValue]==0){
-            // Do something with the FULL SIZED image
-            NSLog(@"full");
-        } else {
-            NSLog(@"degraded");
-            // Do something with the regraded image
-        }
     }];
     return cell;
 }

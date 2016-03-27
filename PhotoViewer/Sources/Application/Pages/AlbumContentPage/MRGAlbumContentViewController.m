@@ -18,8 +18,6 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
 
-@property (assign, nonatomic) PHImageRequestID requestID;
-
 @end
 
 static const CGFloat kImageSize = 78.0;
@@ -42,10 +40,12 @@ static const CGFloat kImageSize = 78.0;
     MRGPhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[MRGPhotoCell reuseIdentifier] forIndexPath:indexPath];
     PHAsset *asset = self.album.photoAssets[indexPath.row];
     PHImageManager *imageManager = self.assembly.imageManager;
-//    [imageManager cancelImageRequest:self.requestID];
-//    cell.thumbnailView.image = nil;
-    self.requestID = [imageManager requestImageForAsset:asset targetSize:sizeInPixels(kImageSize) contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+    if (cell.tag) {
+        [imageManager cancelImageRequest:(PHImageRequestID)cell.tag];
+    }
+    cell.tag = [imageManager requestImageForAsset:asset targetSize:sizeInPixels(kImageSize) contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         cell.thumbnailView.image = result;
+        NSLog(@"%@", NSStringFromCGSize(result.size));
     }];
     return cell;
 }
