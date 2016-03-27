@@ -11,6 +11,7 @@
 #import "MRGAlbum.h"
 #import "MRGAppAssembly.h"
 #import "MRGPresentationHelper.h"
+#import "MRGPhotoPreviewViewController.h"
 #import <Photos/Photos.h>
 
 @interface MRGAlbumContentViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -20,7 +21,7 @@
 
 @end
 
-static const CGFloat kImageSize = 78.0;
+static NSString *const kPhotoPreviewSegue = @"MRGPhotoPreviewSegue";
 
 @implementation MRGAlbumContentViewController
 
@@ -43,11 +44,31 @@ static const CGFloat kImageSize = 78.0;
     if (cell.tag) {
         [imageManager cancelImageRequest:(PHImageRequestID)cell.tag];
     }
-    cell.tag = [imageManager requestImageForAsset:asset targetSize:sizeInPixels(kImageSize) contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+    CGSize size = cell.bounds.size;
+    cell.tag = [imageManager requestImageForAsset:asset targetSize:mrg_sizeInPixels(size) contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         cell.thumbnailView.image = result;
-        NSLog(@"%@", NSStringFromCGSize(result.size));
     }];
     return cell;
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:kPhotoPreviewSegue sender:cell];
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:kPhotoPreviewSegue]) {
+        MRGPhotoPreviewViewController *vc = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:sender];
+        PHAsset *asset = self.album.photoAssets[indexPath.row];
+        vc.asset = asset;
+        vc.assembly = self.assembly;
+    }
 }
 
 #pragma mark - Private 

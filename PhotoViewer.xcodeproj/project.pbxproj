@@ -25,6 +25,7 @@
 		60B81DA91CA6E8C700682940 /* MRGPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B81DA81CA6E8C700682940 /* MRGPhotoCell.xib */; };
 		60B81DAC1CA6E8FC00682940 /* MRGPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B81DAB1CA6E8FC00682940 /* MRGPhotoCell.m */; };
 		60B81DB11CA7268700682940 /* MRGPresentationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B81DB01CA7268700682940 /* MRGPresentationHelper.m */; };
+		60B81DB51CA7E0AF00682940 /* MRGPhotoPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B81DB41CA7E0AF00682940 /* MRGPhotoPreviewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		60B81DAB1CA6E8FC00682940 /* MRGPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRGPhotoCell.m; path = Sources/Application/Pages/AlbumContentPage/MRGPhotoCell.m; sourceTree = "<group>"; };
 		60B81DAF1CA7268700682940 /* MRGPresentationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRGPresentationHelper.h; path = Sources/Application/Utilities/MRGPresentationHelper.h; sourceTree = "<group>"; };
 		60B81DB01CA7268700682940 /* MRGPresentationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRGPresentationHelper.m; path = Sources/Application/Utilities/MRGPresentationHelper.m; sourceTree = "<group>"; };
+		60B81DB31CA7E0AF00682940 /* MRGPhotoPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRGPhotoPreviewViewController.h; path = Sources/Application/Pages/PhotoPreviewPage/MRGPhotoPreviewViewController.h; sourceTree = "<group>"; };
+		60B81DB41CA7E0AF00682940 /* MRGPhotoPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRGPhotoPreviewViewController.m; path = Sources/Application/Pages/PhotoPreviewPage/MRGPhotoPreviewViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				6001F2D11CA5E6920087F27C /* Pages */,
+				6001F2ED1CA618280087F27C /* ViewControllers */,
+				60B81DAD1CA7264200682940 /* Utilities */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -174,8 +179,7 @@
 			children = (
 				6001F2E31CA5E9B60087F27C /* AlbumListPage */,
 				60B81DA41CA6DBB800682940 /* AlbumContentPage */,
-				6001F2ED1CA618280087F27C /* ViewControllers */,
-				60B81DAD1CA7264200682940 /* Utilities */,
+				60B81DB21CA7E07800682940 /* PhotoPreviewPage */,
 			);
 			name = Pages;
 			sourceTree = "<group>";
@@ -252,6 +256,15 @@
 				60B81DB01CA7268700682940 /* MRGPresentationHelper.m */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		60B81DB21CA7E07800682940 /* PhotoPreviewPage */ = {
+			isa = PBXGroup;
+			children = (
+				60B81DB31CA7E0AF00682940 /* MRGPhotoPreviewViewController.h */,
+				60B81DB41CA7E0AF00682940 /* MRGPhotoPreviewViewController.m */,
+			);
+			name = PhotoPreviewPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +374,7 @@
 				60B81DA11CA6BEDD00682940 /* MRGAlbumCell.m in Sources */,
 				6001F2F01CA618510087F27C /* MRGBaseViewController.m in Sources */,
 				6001F2E91CA5FBFE0087F27C /* MRGAlbum.m in Sources */,
+				60B81DB51CA7E0AF00682940 /* MRGPhotoPreviewViewController.m in Sources */,
 				60B81DA71CA6DBF700682940 /* MRGAlbumContentViewController.m in Sources */,
 				6001F2EC1CA5FEBD0087F27C /* MRGAlbumFetcher.m in Sources */,
 				6001F2F31CA6189E0087F27C /* MRGAppAssembly.m in Sources */,

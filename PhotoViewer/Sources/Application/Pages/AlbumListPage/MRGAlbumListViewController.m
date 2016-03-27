@@ -24,7 +24,6 @@
 @end
 
 static const CGFloat kRowHeight = 76.0;
-static const CGFloat kImageSize = 70.0;
 static NSString *const kAlbumContentSegue = @"MRGAlbumContentSegue";
 
 @implementation MRGAlbumListViewController
@@ -50,9 +49,9 @@ static NSString *const kAlbumContentSegue = @"MRGAlbumContentSegue";
     if (cell.tag) {
         [imageManager cancelImageRequest:(PHImageRequestID)cell.tag];
     }
-    cell.tag = [imageManager requestImageForAsset:album.lastPhotoAsset targetSize:sizeInPixels(kImageSize) contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+    CGSize size = cell.bounds.size;
+    cell.tag = [imageManager requestImageForAsset:album.lastPhotoAsset targetSize:mrg_sizeInPixels(size) contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         cell.thumbnailView.image = result;
-        NSLog(@"%@", NSStringFromCGSize(result.size));
     }];
     return cell;
 }

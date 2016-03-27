@@ -9,4 +9,4 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-extern CGSize sizeInPixels(CGFloat value);
+extern CGSize mrg_sizeInPixels(CGSize size);

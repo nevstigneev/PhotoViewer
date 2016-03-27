@@ -8,8 +8,9 @@
 
 #import "MRGPresentationHelper.h"
 
-CGSize sizeInPixels(CGFloat value) {
+CGSize mrg_sizeInPixels(CGSize size) {
     CGFloat scaleFactor = [UIScreen mainScreen].scale;
-    CGFloat valueInPixels = value * scaleFactor;
-    return CGSizeMake(valueInPixels, valueInPixels);
+    CGFloat widthInPixels = size.width * scaleFactor;
+    CGFloat heightInPixels = size.height * scaleFactor;
+    return CGSizeMake(widthInPixels, heightInPixels);
 }
