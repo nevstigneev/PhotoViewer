@@ -10,14 +10,16 @@
 
 @implementation UIViewController (MRGPresentation)
 
-- (void)mrg_showAccessDeniedAlert {
-    [self mrg_showAlertWithTitle:@"Error" text:@"Unable to load albums. Please allow access to the photo library."];
+- (void)mrg_showAccessDeniedAlertWithCompletion:(MRGEmptyCompletionHandler)completionHandler {
+    [self mrg_showAlertWithTitle:@"Error" text:@"Unable to load albums. Please allow access to the photo library." completion:completionHandler];
 }
 
-- (void)mrg_showAlertWithTitle:(NSString *)title text:(NSString *)text {
+- (void)mrg_showAlertWithTitle:(NSString *)title text:(NSString *)text completion:(MRGEmptyCompletionHandler)completionHandler {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:text preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
-    [alertController addAction:ok];
+    UIAlertAction *exit = [UIAlertAction actionWithTitle:@"Exit" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler();
+    }];
+    [alertController addAction:exit];
     [self presentViewController:alertController animated:YES completion:nil];
 }
 

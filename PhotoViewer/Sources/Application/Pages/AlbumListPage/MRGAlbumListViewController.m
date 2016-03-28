@@ -86,14 +86,18 @@ static NSString *const kAlbumContentSegue = @"MRGAlbumContentSegue";
 - (void)p_checkAuthorization {
     PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
     if (status == PHAuthorizationStatusDenied) {
-        [self mrg_showAccessDeniedAlert];
+        [self mrg_showAccessDeniedAlertWithCompletion:^{
+            exit(0);
+        }];
     } else if (status == PHAuthorizationStatusNotDetermined) {
         [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (status == PHAuthorizationStatusAuthorized) {
                     [self p_updateData];
                 } else if (status == PHAuthorizationStatusDenied) {
-                    [self mrg_showAccessDeniedAlert];
+                    [self mrg_showAccessDeniedAlertWithCompletion:^{
+                        exit(0);
+                    }];
                 }
             });
         }];

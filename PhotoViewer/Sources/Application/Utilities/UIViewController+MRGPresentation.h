@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^MRGEmptyCompletionHandler)();
+
 @interface UIViewController (MRGPresentation)
 
-- (void)mrg_showAccessDeniedAlert;
-- (void)mrg_showAlertWithTitle:(NSString *)title text:(NSString *)text;
+- (void)mrg_showAccessDeniedAlertWithCompletion:(MRGEmptyCompletionHandler)completionHandler;
+- (void)mrg_showAlertWithTitle:(NSString *)title text:(NSString *)text completion:(MRGEmptyCompletionHandler)completionHandler;
 
 @end

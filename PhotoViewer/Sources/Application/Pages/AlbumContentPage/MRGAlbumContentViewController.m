@@ -61,7 +61,6 @@ static NSString *const kPhotoPreviewSegue = @"MRGPhotoPreviewSegue";
     CGSize size = cell.bounds.size;
     cell.tag = [imageManager requestImageForAsset:asset targetSize:mrg_sizeInPixels(size) contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         cell.thumbnailView.image = result;
-        NSLog(@"%@", NSStringFromCGSize(result.size));
     }];
     return cell;
 }
