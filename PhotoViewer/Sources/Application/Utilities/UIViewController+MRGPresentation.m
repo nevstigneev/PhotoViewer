@@ -17,7 +17,9 @@
 - (void)mrg_showAlertWithTitle:(NSString *)title text:(NSString *)text completion:(MRGEmptyCompletionHandler)completionHandler {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:text preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *exit = [UIAlertAction actionWithTitle:@"Exit" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        completionHandler();
+        if (completionHandler) {
+            completionHandler();
+        }
     }];
     [alertController addAction:exit];
     [self presentViewController:alertController animated:YES completion:nil];
