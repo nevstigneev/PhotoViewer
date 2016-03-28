@@ -33,13 +33,15 @@ static NSString *const kPhotoPreviewSegue = @"MRGPhotoPreviewSegue";
     [self p_calculateCellSize];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self p_updateCells];
+}
+
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     [coordinator animateAlongsideTransition:nil completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        [self.collectionView performBatchUpdates:^{
-            [self p_calculateCellSize];
-            [self.collectionView setCollectionViewLayout:self.flowLayout animated:YES];
-        } completion:nil];
+        [self p_updateCells];
     }];
 }
 
@@ -59,6 +61,7 @@ static NSString *const kPhotoPreviewSegue = @"MRGPhotoPreviewSegue";
     CGSize size = cell.bounds.size;
     cell.tag = [imageManager requestImageForAsset:asset targetSize:mrg_sizeInPixels(size) contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         cell.thumbnailView.image = result;
+        NSLog(@"%@", NSStringFromCGSize(result.size));
     }];
     return cell;
 }
@@ -84,6 +87,12 @@ static NSString *const kPhotoPreviewSegue = @"MRGPhotoPreviewSegue";
 }
 
 #pragma mark - Private 
+
+- (void)p_updateCells {
+    [self.collectionView performBatchUpdates:^{
+        [self p_calculateCellSize];
+    } completion:nil];
+}
 
 - (void)p_calculateCellSize {
     [self.collectionView layoutIfNeeded];
