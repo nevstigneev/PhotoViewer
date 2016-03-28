@@ -12,8 +12,6 @@
 		6001F2CF1CA5E6650087F27C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6001F2CC1CA5E6650087F27C /* Main.storyboard */; };
 		6001F2DB1CA5E6DE0087F27C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001F2D61CA5E6DE0087F27C /* main.m */; };
 		6001F2DC1CA5E6DE0087F27C /* MRGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001F2D81CA5E6DE0087F27C /* MRGAppDelegate.m */; };
-		6001F2E01CA5E7140087F27C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6001F2DE1CA5E7140087F27C /* Info.plist */; };
-		6001F2E21CA5E8F10087F27C /* PhotoViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001F2DF1CA5E7140087F27C /* PhotoViewerTests.m */; };
 		6001F2E61CA5E9E50087F27C /* MRGAlbumListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001F2E51CA5E9E50087F27C /* MRGAlbumListViewController.m */; };
 		6001F2E91CA5FBFE0087F27C /* MRGAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001F2E81CA5FBFE0087F27C /* MRGAlbum.m */; };
 		6001F2EC1CA5FEBD0087F27C /* MRGAlbumFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 6001F2EB1CA5FEBD0087F27C /* MRGAlbumFetcher.m */; };
@@ -29,19 +27,8 @@
 		60B81DC01CA8803800682940 /* UIViewController+MRGPresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B81DBF1CA8803800682940 /* UIViewController+MRGPresentation.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		6001F2B41CA5E3710087F27C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6001F2921CA5E3700087F27C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6001F2991CA5E3700087F27C;
-			remoteInfo = PhotoViewer;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		6001F29A1CA5E3700087F27C /* PhotoViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6001F2B31CA5E3710087F27C /* PhotoViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6001F2C61CA5E62A0087F27C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = InfoPlists/Info.plist; sourceTree = "<group>"; };
 		6001F2C81CA5E64F0087F27C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		6001F2CB1CA5E6650087F27C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,8 +36,6 @@
 		6001F2D61CA5E6DE0087F27C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Sources/main.m; sourceTree = "<group>"; };
 		6001F2D71CA5E6DE0087F27C /* MRGAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRGAppDelegate.h; path = Sources/MRGAppDelegate.h; sourceTree = "<group>"; };
 		6001F2D81CA5E6DE0087F27C /* MRGAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRGAppDelegate.m; path = Sources/MRGAppDelegate.m; sourceTree = "<group>"; };
-		6001F2DE1CA5E7140087F27C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
-		6001F2DF1CA5E7140087F27C /* PhotoViewerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoViewerTests.m; path = Tests/PhotoViewerTests.m; sourceTree = "<group>"; };
 		6001F2E41CA5E9E50087F27C /* MRGAlbumListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRGAlbumListViewController.h; path = Sources/Application/Pages/AlbumListPage/MRGAlbumListViewController.h; sourceTree = "<group>"; };
 		6001F2E51CA5E9E50087F27C /* MRGAlbumListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MRGAlbumListViewController.m; path = Sources/Application/Pages/AlbumListPage/MRGAlbumListViewController.m; sourceTree = "<group>"; };
 		6001F2E71CA5FBFE0087F27C /* MRGAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MRGAlbum.h; path = Sources/Domain/Entities/MRGAlbum.h; sourceTree = "<group>"; };
@@ -85,13 +70,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6001F2B01CA5E3710087F27C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -107,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				6001F29A1CA5E3700087F27C /* PhotoViewer.app */,
-				6001F2B31CA5E3710087F27C /* PhotoViewerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,7 +95,6 @@
 				6001F2C21CA5E5F70087F27C /* InfoPlists */,
 				6001F2C41CA5E6050087F27C /* Resources */,
 				6001F2C31CA5E5FE0087F27C /* Sources */,
-				6001F2C51CA5E60A0087F27C /* Tests */,
 			);
 			path = PhotoViewer;
 			sourceTree = "<group>";
@@ -136,7 +112,6 @@
 			children = (
 				6001F2D01CA5E68D0087F27C /* Application */,
 				6001F2D21CA5E6980087F27C /* Domain */,
-				6001F2D31CA5E69D0087F27C /* Utilities */,
 				6001F2F11CA6189E0087F27C /* MRGAppAssembly.h */,
 				6001F2F21CA6189E0087F27C /* MRGAppAssembly.m */,
 				6001F2D71CA5E6DE0087F27C /* MRGAppDelegate.h */,
@@ -156,15 +131,6 @@
 				6001F2CC1CA5E6650087F27C /* Main.storyboard */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		6001F2C51CA5E60A0087F27C /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				6001F2DE1CA5E7140087F27C /* Info.plist */,
-				6001F2DF1CA5E7140087F27C /* PhotoViewerTests.m */,
-			);
-			name = Tests;
 			sourceTree = "<group>";
 		};
 		6001F2D01CA5E68D0087F27C /* Application */ = {
@@ -194,13 +160,6 @@
 				6001F2D41CA5E6C50087F27C /* Entities */,
 			);
 			name = Domain;
-			sourceTree = "<group>";
-		};
-		6001F2D31CA5E69D0087F27C /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Utilities;
 			sourceTree = "<group>";
 		};
 		6001F2D41CA5E6C50087F27C /* Entities */ = {
@@ -292,24 +251,6 @@
 			productReference = 6001F29A1CA5E3700087F27C /* PhotoViewer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6001F2B21CA5E3710087F27C /* PhotoViewerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6001F2BF1CA5E3710087F27C /* Build configuration list for PBXNativeTarget "PhotoViewerTests" */;
-			buildPhases = (
-				6001F2AF1CA5E3710087F27C /* Sources */,
-				6001F2B01CA5E3710087F27C /* Frameworks */,
-				6001F2B11CA5E3710087F27C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6001F2B51CA5E3710087F27C /* PBXTargetDependency */,
-			);
-			name = PhotoViewerTests;
-			productName = PhotoViewerTests;
-			productReference = 6001F2B31CA5E3710087F27C /* PhotoViewerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -322,10 +263,6 @@
 				TargetAttributes = {
 					6001F2991CA5E3700087F27C = {
 						CreatedOnToolsVersion = 7.3;
-					};
-					6001F2B21CA5E3710087F27C = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = 6001F2991CA5E3700087F27C;
 					};
 				};
 			};
@@ -343,7 +280,6 @@
 			projectRoot = "";
 			targets = (
 				6001F2991CA5E3700087F27C /* PhotoViewer */,
-				6001F2B21CA5E3710087F27C /* PhotoViewerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -353,19 +289,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6001F2E01CA5E7140087F27C /* Info.plist in Resources */,
 				60B81DA91CA6E8C700682940 /* MRGPhotoCell.xib in Resources */,
 				6001F2CF1CA5E6650087F27C /* Main.storyboard in Resources */,
 				60B81DA31CA6BFA100682940 /* MRGAlbumCell.xib in Resources */,
 				6001F2C91CA5E64F0087F27C /* Assets.xcassets in Resources */,
 				6001F2CE1CA5E6650087F27C /* LaunchScreen.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6001F2B11CA5E3710087F27C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,23 +320,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6001F2AF1CA5E3710087F27C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6001F2E21CA5E8F10087F27C /* PhotoViewerTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		6001F2B51CA5E3710087F27C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6001F2991CA5E3700087F27C /* PhotoViewer */;
-			targetProxy = 6001F2B41CA5E3710087F27C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6001F2CA1CA5E6650087F27C /* LaunchScreen.storyboard */ = {
@@ -536,30 +448,6 @@
 			};
 			name = Release;
 		};
-		6001F2C01CA5E3710087F27C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = PhotoViewer/Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.topside.PhotoViewerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoViewer.app/PhotoViewer";
-			};
-			name = Debug;
-		};
-		6001F2C11CA5E3710087F27C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = PhotoViewer/Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.topside.PhotoViewerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoViewer.app/PhotoViewer";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -577,15 +465,6 @@
 			buildConfigurations = (
 				6001F2BD1CA5E3710087F27C /* Debug */,
 				6001F2BE1CA5E3710087F27C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6001F2BF1CA5E3710087F27C /* Build configuration list for PBXNativeTarget "PhotoViewerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6001F2C01CA5E3710087F27C /* Debug */,
-				6001F2C11CA5E3710087F27C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

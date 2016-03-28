@@ -21,6 +21,7 @@
 
 @end
 
+static NSUInteger const kCellCountForRow = 4;
 static NSString *const kPhotoPreviewSegue = @"MRGPhotoPreviewSegue";
 
 @implementation MRGAlbumContentViewController
@@ -29,6 +30,17 @@ static NSString *const kPhotoPreviewSegue = @"MRGPhotoPreviewSegue";
     [super viewDidLoad];
     [self p_setupNavigationBar];
     [self p_setupViews];
+    [self p_calculateCellSize];
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    [coordinator animateAlongsideTransition:nil completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        [self.collectionView performBatchUpdates:^{
+            [self p_calculateCellSize];
+            [self.collectionView setCollectionViewLayout:self.flowLayout animated:YES];
+        } completion:nil];
+    }];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -72,6 +84,15 @@ static NSString *const kPhotoPreviewSegue = @"MRGPhotoPreviewSegue";
 }
 
 #pragma mark - Private 
+
+- (void)p_calculateCellSize {
+    [self.collectionView layoutIfNeeded];
+    CGFloat spacing = self.flowLayout.minimumInteritemSpacing;
+    CGFloat viewWidth = self.collectionView.bounds.size.width;
+    CGFloat cellWidth = (viewWidth - (kCellCountForRow - 1) * spacing) / kCellCountForRow;
+    CGSize cellSize = CGSizeMake(cellWidth, cellWidth);
+    self.flowLayout.itemSize = cellSize;
+}
 
 - (void)p_setupViews {
     [self.collectionView registerNib:[MRGPhotoCell nib] forCellWithReuseIdentifier:[MRGPhotoCell reuseIdentifier]];
